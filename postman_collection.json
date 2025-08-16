@@ -14,8 +14,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/",
+              "host": ["localhost"],
+              "port": "8000",
               "path": [""]
             }
           }
@@ -26,8 +27,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/health",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/health",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["health"]
             }
           }
@@ -38,8 +40,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/stats",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/stats",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["stats"]
             }
           }
@@ -64,8 +67,9 @@
               "raw": "{\n  \"capacidad\": 10000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 2000, \"ganancia\": 1500},\n    {\"nombre\": \"B\", \"peso\": 4000, \"ganancia\": 3500},\n    {\"nombre\": \"C\", \"peso\": 5000, \"ganancia\": 4000},\n    {\"nombre\": \"D\", \"peso\": 3000, \"ganancia\": 2500}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -85,8 +89,9 @@
               "raw": "{\n  \"capacidad\": 6000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500},\n    {\"nombre\": \"B\", \"peso\": 2000, \"ganancia\": 1000},\n    {\"nombre\": \"C\", \"peso\": 3000, \"ganancia\": 1500}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -106,8 +111,9 @@
               "raw": "{\n  \"capacidad\": 2000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 100},\n    {\"nombre\": \"B\", \"peso\": 1000, \"ganancia\": 500},\n    {\"nombre\": \"C\", \"peso\": 1000, \"ganancia\": 1000}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -127,8 +133,9 @@
               "raw": "{\n  \"capacidad\": 2000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -144,8 +151,9 @@
             "method": "POST",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/optimizar/ejemplo",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar/ejemplo",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar", "ejemplo"]
             }
           }
@@ -170,8 +178,9 @@
               "raw": "{\n  \"capacidad\": 0,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -191,8 +200,9 @@
               "raw": "{\n  \"capacidad\": -1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -212,8 +222,9 @@
               "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": []\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -233,8 +244,9 @@
               "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 0, \"ganancia\": 500}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -254,8 +266,9 @@
               "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 0}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -275,8 +288,9 @@
               "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 500, \"ganancia\": 300},\n    {\"nombre\": \"A\", \"peso\": 500, \"ganancia\": 300}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
@@ -296,20 +310,14 @@
               "raw": "{\n  \"capacidad\": 500,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500},\n    {\"nombre\": \"B\", \"peso\": 2000, \"ganancia\": 1000}\n  ]\n}"
             },
             "url": {
-              "raw": "{{base_url}}/optimizar",
-              "host": ["{{base_url}}"],
+              "raw": "http://localhost:8000/optimizar",
+              "host": ["localhost"],
+              "port": "8000",
               "path": ["optimizar"]
             }
           }
         }
       ]
-    }
-  ],
-  "variable": [
-    {
-      "key": "base_url",
-      "value": "http://localhost:8000",
-      "type": "string"
     }
   ]
 }
