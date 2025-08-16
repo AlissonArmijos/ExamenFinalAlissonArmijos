@@ -1,7 +1,8 @@
 version: '3.8'
 
 services:
-  portfolio-optimizer:
+  # Backend - Microservicio de Optimización
+  backend:
     build: .
     ports:
       - "8000:8000"
@@ -17,3 +18,20 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    networks:
+      - portfolio-network
+
+  # Frontend - Aplicación React
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge

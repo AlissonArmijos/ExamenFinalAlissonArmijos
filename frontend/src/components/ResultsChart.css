@@ -1,0 +1,164 @@
+/* Estilos para los gráficos de resultados */
+.results-chart {
+  width: 100%;
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.charts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.chart-wrapper {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.chart-container {
+  height: 300px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Leyenda del gráfico */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid var(--border-color);
+}
+
+.legend-color.selected {
+  background: var(--success-color);
+}
+
+.legend-color.not-selected {
+  background: var(--error-color);
+}
+
+/* Información de capacidad */
+.capacity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--bg-gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.capacity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.capacity-item:last-child {
+  border-bottom: none;
+}
+
+.capacity-label {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.capacity-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    padding: 1rem;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+  
+  .chart-legend {
+    gap: 1rem;
+  }
+  
+  .legend-item {
+    font-size: 0.8rem;
+  }
+  
+  .capacity-info {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-title {
+    font-size: 1.125rem;
+  }
+  
+  .chart-subtitle {
+    font-size: 1rem;
+  }
+  
+  .chart-container {
+    height: 180px;
+  }
+  
+  .chart-legend {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .capacity-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+}

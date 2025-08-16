@@ -1,0 +1,199 @@
+/* Estilos para la tabla de resultados */
+.results-table {
+  width: 100%;
+}
+
+.table-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-white);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+thead {
+  background: var(--bg-gray-100);
+}
+
+th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.table-row {
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background: var(--bg-gray-50);
+}
+
+.table-row.selected {
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.table-row.not-selected {
+  background: rgba(248, 113, 113, 0.05);
+}
+
+/* Columnas específicas */
+.project-name {
+  font-weight: 600;
+}
+
+.project-badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cost, .profit {
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+}
+
+.ratio {
+  text-align: center;
+}
+
+.ratio-value {
+  background: var(--bg-gray-100);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.status {
+  text-align: center;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge.selected {
+  background: var(--success-color);
+  color: white;
+}
+
+.status-badge.not-selected {
+  background: var(--bg-gray-100);
+  color: var(--text-secondary);
+}
+
+/* Resumen de la tabla */
+.table-summary {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.summary-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.summary-value.success {
+  color: var(--success-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-container {
+    font-size: 0.75rem;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .project-badge,
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .ratio-value {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .table-summary {
+    padding: 1rem;
+  }
+  
+  .summary-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-title {
+    font-size: 1.125rem;
+  }
+  
+  th, td {
+    padding: 0.25rem 0.125rem;
+  }
+  
+  .project-badge,
+  .status-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
