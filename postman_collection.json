@@ -1,0 +1,315 @@
+{
+  "info": {
+    "name": "Portfolio Optimizer API",
+    "description": "Colección de Postman para el Microservicio de Optimización de Portafolio de Inversiones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Información del Servicio",
+      "item": [
+        {
+          "name": "Root Endpoint",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/",
+              "host": ["{{base_url}}"],
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            }
+          }
+        },
+        {
+          "name": "Estadísticas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/stats",
+              "host": ["{{base_url}}"],
+              "path": ["stats"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Optimización",
+      "item": [
+        {
+          "name": "Caso Básico del Enunciado",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 10000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 2000, \"ganancia\": 1500},\n    {\"nombre\": \"B\", \"peso\": 4000, \"ganancia\": 3500},\n    {\"nombre\": \"C\", \"peso\": 5000, \"ganancia\": 4000},\n    {\"nombre\": \"D\", \"peso\": 3000, \"ganancia\": 2500}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Caso Límite de Capacidad",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 6000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500},\n    {\"nombre\": \"B\", \"peso\": 2000, \"ganancia\": 1000},\n    {\"nombre\": \"C\", \"peso\": 3000, \"ganancia\": 1500}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Caso de Eficiencia",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 2000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 100},\n    {\"nombre\": \"B\", \"peso\": 1000, \"ganancia\": 500},\n    {\"nombre\": \"C\", \"peso\": 1000, \"ganancia\": 1000}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Caso Un Solo Objeto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 2000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ejemplos",
+      "item": [
+        {
+          "name": "Ejemplo Predefinido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/optimizar/ejemplo",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar", "ejemplo"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Casos de Error",
+      "item": [
+        {
+          "name": "Capacidad Cero",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 0,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Capacidad Negativa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": -1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Objetos Vacíos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": []\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Peso Cero",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 0, \"ganancia\": 500}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Ganancia Cero",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 0}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Nombres Duplicados",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 1000,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 500, \"ganancia\": 300},\n    {\"nombre\": \"A\", \"peso\": 500, \"ganancia\": 300}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        },
+        {
+          "name": "Capacidad Insuficiente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacidad\": 500,\n  \"objetos\": [\n    {\"nombre\": \"A\", \"peso\": 1000, \"ganancia\": 500},\n    {\"nombre\": \"B\", \"peso\": 2000, \"ganancia\": 1000}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/optimizar",
+              "host": ["{{base_url}}"],
+              "path": ["optimizar"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ]
+}
